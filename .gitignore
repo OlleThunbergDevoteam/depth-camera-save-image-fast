@@ -1,0 +1,5 @@
+node_modules
+images/2D/*
+images/3D/*
+!images/3D/info.txt
+!images/2D/info.txt
