@@ -14,6 +14,7 @@ app.post("/upload/photo", (req, res) => {
   // get the image type from the body
   const imageType = req.body.imageType;
   console.log(req.body.userdata);
+  console.log(req.body.supportsDepthData, req.body.imageType);
   // replace the mime type of the base64 string with nothing
   const base64Data = image.replace(/^data:image\/\w+;base64,/, "");
   // Save the base64 jpeg image
@@ -25,7 +26,12 @@ app.post("/upload/photo", (req, res) => {
     }
   });
 
-  res.json({ success: true }).end();
+  res
+    .json({
+      approved: true,
+      statusMessage: "everything good 🥰",
+    })
+    .end();
 });
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
